@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LINGUIST</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        /* Import Google Font - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #7393B3;
+    background-image: url(images/22379977_6559978.jpg);
+    background-size: 100% 110%;
+}
+header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    font-size: 30px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+}
+header i.fa{
+    margin-right: 10px;
+}
+.container{
+    width: 60%;
+    height: 530px;
+    background: #fff;
+    border-radius: 7px;
+    padding: 20px;
+}
+.wrapper{
+    border-radius: 5px;
+    border: 1px solid #bbb; 
+}
+.wrapper .text-input{
+    display: flex;
+    border-bottom: 1px solid #bbb;
+}
+.text-input .ocr input[type="file"]{
+    margin-top: 5px;
+    margin-left: 10px;
+    height: fit-content;
+}
+.text-input div:nth-child(1) {
+    flex: 1;
+    margin-right: 10px;
+}
+.text-input div:nth-child(1) img {
+    width: 250px;
+    height: 300px;
+    margin-left: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.text-input div:nth-child(2) textarea {
+    width: 300px;
+    height: 500px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.text-input .ocr .progress {
+    flex: 1;
+    width: fit-content;
+    height: fit-content;
+    color: #fff;
+    font-size: 10px;
+    margin: 5px;
+    padding: 5px;
+    background-color: gray;
+    border-radius: 5px;
+}
+.text-input .to-text{
+    border-radius: 0px;
+    border-left: 1px solid #bbb;
+}
+.text-input textarea{
+    height: 370px;
+    width: 100%;
+    border: none;
+    outline: none;
+    resize: none;
+    font-size: 16px;
+    border-radius: 5px;
+    background: none;
+    padding: 10px 15px;
+}
+.controls, li, .icons, .icons i{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.controls{
+    list-style: none;
+    padding: 12px 15px ;
+}
+.controls .row.from .icons{
+    padding-right: 15px;
+    border-right: 1px solid #bbb;
+}
+.controls .row.to .icons{
+    padding-left: 15px;
+    border-left: 1px solid #bbb;
+}
+.controls .icons{
+    width: 68%;
+}
+.controls .icons i{
+    width: 50px;
+    color: #9f9f9f;
+    font-size: 14px;
+    cursor: pointer;
+    justify-content: center;
+}
+.controls .row select{
+    border: none;
+    outline: none;
+    font-size: 18px;
+    background: none;
+}
+.controls .exchange{
+    color: #9f9f9f;
+    font-size: 16px;
+    cursor: pointer;
+}
+.container button{
+    width: 49.5%;
+    padding: 14px;
+    margin-top: 20px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: #fff;
+    font-size: 17px;
+    border-radius: 5px;
+    background: #20B2AA;;
+}
+.container button:hover {
+    background-color: gray;
+    color: white;
+  }
+
+
+  @media screen and (max-width: 768px) {
+            body {
+                background-size: cover;
+            }
+
+            .container {
+                width: 100%;
+            }
+
+            .wrapper {
+                width: 100%;
+                padding: 10px;
+            }
+
+            .text-input .ocr input[type="file"] {
+                margin-top: 10px;
+            }
+
+            .text-input div:nth-child(1) img {
+                width: 100%;
+                height: auto;
+                margin: 10px 0;
+            }
+
+            .text-input div:nth-child(2) textarea {
+                width: 100%;
+                height: 250px;
+                font-size: 14px;
+            }
+
+            .text-input .ocr .progress {
+                font-size: 12px;
+                margin: 10px 0;
+            }
+
+            .controls .icons i {
+                width: 30px;
+                font-size: 12px;
+            }
+
+            .controls .exchange {
+                font-size: 14px;
+            }
+
+            .container button {
+                width: 100%;
+                margin-top: 10px;
+            }
+        }
+
+        @media screen and (max-width: 600px){
+            body {
+                background-size: 100%;
+            }
+
+            header{
+                width: 100%;
+            }
+
+            .container {
+                width: 95%;
+            }
+
+            .wrapper {
+                width: 100%;
+                padding: 2px;
+            }
+
+            .ocr{
+                width: 30%;
+            }
+
+            .text-input .ocr input[type="file"] {
+                margin-top: 1px;
+            }
+
+            .text-input div:nth-child(1) img {
+                width: 75px;
+                height: 95px;
+                margin: 3px 0;
+                margin-left: 2px;
+            }
+
+            .text-input div:nth-child(2) textarea {
+                width: 30%;
+                font-size: 8px;
+            }
+
+            .text-input .from-text{
+                margin-top: 18px;
+                width: 30%;
+                font-size: 10px;
+            }
+
+            .text-input .to-text{
+                margin-top: 18px;
+                width: 30%;
+                font-size: 10px;
+            }
+
+            .text-input .ocr .progress {
+                font-size: 10px;
+                margin: 2px 0;
+            }
+
+            .controls .row select{
+                width: 100%;
+                font-size: 14px;
+            }
+
+            .controls .icons i {
+                width: 100%;
+                font-size: 10px;
+            }
+
+            .controls .exchange {
+                font-size: 10px;
+            }
+
+            .container button {
+                width: 49%; 
+                margin-top: 10px;
+                font-size: 16px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <header><i class="fa fa-language"></i>LINGUIST</header>
+    <div class="container">
+        <div class="wrapper">
+            <div class="text-input">
+                <div class="ocr">
+                    <input type="file">
+                    <div class="progress"></div>
+                    <div>
+                        <img src="">
+                    </div>
+                </div>
+                <textarea class="from-text" placeholder="Enter text"></textarea>
+                <textarea class="to-text" placeholder="Translation"></textarea>
+            </div>
+            <ul class="controls">
+                <li class="row from">
+                    <div class="icons">
+                        <i id="from" class="fas fa-volume-up"></i>
+                        <i id="from" class="fas fa-copy"></i>
+                    </div>
+                    <select></select>
+                </li>
+                <li class="exchange"><i class="fas fa-exchange-alt"></i></li>
+                <li class="row to">
+                    <select></select>
+                    <div class="icons">
+                        <i id="to" class="fas fa-volume-up"></i>
+                        <i id="to" class="fas fa-copy"></i>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <button id="button1">Start</button>
+        <button id="button2">Translate Text</button>
+    </div>
+
+
+    <script src="https://unpkg.com/tesseract.js@v2.0.0-alpha.13/dist/tesseract.min.js"></script>
+    <script>
+        const countries = {
+    "am-ET": "Amharic",
+    "ar-SA": "Arabic",
+    "be-BY": "Bielarus",
+    "bem-ZM": "Bemba",
+    "bi-VU": "Bislama",
+    "bjs-BB": "Bajan",
+    "bn-IN": "Bengali",
+    "bo-CN": "Tibetan",
+    "br-FR": "Breton",
+    "bs-BA": "Bosnian",
+    "ca-ES": "Catalan",
+    "cop-EG": "Coptic",
+    "cs-CZ": "Czech",
+    "cy-GB": "Welsh",
+    "da-DK": "Danish",
+    "dz-BT": "Dzongkha",
+    "de-DE": "German",
+    "dv-MV": "Maldivian",
+    "el-GR": "Greek",
+    "en-GB": "English",
+    "es-ES": "Spanish",
+    "et-EE": "Estonian",
+    "eu-ES": "Basque",
+    "fa-IR": "Persian",
+    "fi-FI": "Finnish",
+    "fn-FNG": "Fanagalo",
+    "fo-FO": "Faroese",
+    "fr-FR": "French",
+    "gl-ES": "Galician",
+    "gu-IN": "Gujarati",
+    "ha-NE": "Hausa",
+    "he-IL": "Hebrew",
+    "hi-IN": "Hindi",
+    "hr-HR": "Croatian",
+    "hu-HU": "Hungarian",
+    "id-ID": "Indonesian",
+    "is-IS": "Icelandic",
+    "it-IT": "Italian",
+    "ja-JP": "Japanese",
+    "kk-KZ": "Kazakh",
+    "km-KM": "Khmer",
+    "kn-IN": "Kannada",
+    "ko-KR": "Korean",
+    "ku-TR": "Kurdish",
+    "ky-KG": "Kyrgyz",
+    "la-VA": "Latin",
+    "lo-LA": "Lao",
+    "lv-LV": "Latvian",
+    "men-SL": "Mende",
+    "mg-MG": "Malagasy",
+    "mi-NZ": "Maori",
+    "ms-MY": "Malay",
+    "mt-MT": "Maltese",
+    "my-MM": "Burmese",
+    "ne-NP": "Nepali",
+    "niu-NU": "Niuean",
+    "nl-NL": "Dutch",
+    "no-NO": "Norwegian",
+    "ny-MW": "Nyanja",
+    "ur-PK": "Pakistani",
+    "pau-PW": "Palauan",
+    "pa-IN": "Panjabi",
+    "ps-PK": "Pashto",
+    "pis-SB": "Pijin",
+    "pl-PL": "Polish",
+    "pt-PT": "Portuguese",
+    "rn-BI": "Kirundi",
+    "ro-RO": "Romanian",
+    "ru-RU": "Russian",
+    "sg-CF": "Sango",
+    "si-LK": "Sinhala",
+    "sk-SK": "Slovak",
+    "sm-WS": "Samoan",
+    "sn-ZW": "Shona",
+    "so-SO": "Somali",
+    "sq-AL": "Albanian",
+    "sr-RS": "Serbian",
+    "sv-SE": "Swedish",
+    "sw-SZ": "Swahili",
+    "ta-LK": "Tamil",
+    "te-IN": "Telugu",
+    "tet-TL": "Tetum",
+    "tg-TJ": "Tajik",
+    "th-TH": "Thai",
+    "ti-TI": "Tigrinya",
+    "tk-TM": "Turkmen",
+    "tl-PH": "Tagalog",
+    "tn-BW": "Tswana",
+    "to-TO": "Tongan",
+    "tr-TR": "Turkish",
+    "uk-UA": "Ukrainian",
+    "uz-UZ": "Uzbek",
+    "vi-VN": "Vietnamese",
+    "wo-SN": "Wolof",
+    "xh-ZA": "Xhosa",
+    "yi-YD": "Yiddish",
+    "zu-ZA": "Zulu"
+}
+    </script>
+    <script>
+        const fromText = document.querySelector(".from-text"),
+toText = document.querySelector(".to-text"),
+exchageIcon = document.querySelector(".exchange"),
+selectTag = document.querySelectorAll("select"),
+icons = document.querySelectorAll(".row i");
+translateBtn = document.getElementById("button2");
+
+const fileSelector = document.querySelector('input')
+const start = document.getElementById('button1')
+const img = document.querySelector('img')
+const progress = document.querySelector('.progress')
+const textarea = document.querySelector('textarea')
+const text = document.querySelector("Text")
+
+// first show image on upload
+fileSelector.onchange = () => {
+    var file = fileSelector.files[0]
+    var imgUrl = window.URL.createObjectURL(new Blob([file], { type: 'image/jpg' }))
+    img.src = imgUrl
+}
+
+// now start text recognition
+start.onclick = () => {
+    textarea.innerHTML = ''
+    const rec = new Tesseract.TesseractWorker()
+    rec.recognize(fileSelector.files[0])
+        .progress(function (response) {
+            if(response.status == 'recognizing text'){
+                progress.innerHTML = response.status
+            }else{
+                progress.innerHTML = response.status
+            }
+        })
+        .then(function (data) {
+            textarea.innerHTML = data.text
+            progress.innerHTML = 'Done'
+        })
+}
+
+selectTag.forEach((tag, id) => {
+    for (let country_code in countries) {
+        let selected = id == 0 ? country_code == "en-GB" ? "selected" : "" : country_code == "hi-IN" ? "selected" : "";
+        let option = `<option ${selected} value="${country_code}">${countries[country_code]}</option>`;
+        tag.insertAdjacentHTML("beforeend", option);
+    }
+});
+
+exchageIcon.addEventListener("click", () => {
+    let tempText = fromText.value,
+    tempLang = selectTag[0].value;
+    fromText.value = toText.value;
+    toText.value = tempText;
+    selectTag[0].value = selectTag[1].value;
+    selectTag[1].value = tempLang;
+});
+
+fromText.addEventListener("keyup", () => {
+    if(!fromText.value) {
+        toText.value = "";
+    }
+});
+
+translateBtn.addEventListener("click", () => {
+    let text = fromText.value.trim(),
+    translateFrom = selectTag[0].value,
+    translateTo = selectTag[1].value;
+    if(!text) return;
+    toText.setAttribute("placeholder", "Translating...");
+    let apiUrl = `https://api.mymemory.translated.net/get?q=${text}&langpair=${translateFrom}|${translateTo}`;
+    fetch(apiUrl).then(res => res.json()).then(data => {
+        toText.value = data.responseData.translatedText;
+        data.matches.forEach(data => {
+            if(data.id === 0) {
+                toText.value = data.translation;
+            }
+        });
+        toText.setAttribute("placeholder", "Translation");
+    });
+});
+
+icons.forEach(icon => {
+    icon.addEventListener("click", ({target}) => {
+        if(!fromText.value || !toText.value) return;
+        if(target.classList.contains("fa-copy")) {
+            if(target.id == "from") {
+                navigator.clipboard.writeText(fromText.value);
+            } else {
+                navigator.clipboard.writeText(toText.value);
+            }
+        } else {
+            let utterance;
+            if(target.id == "from") {
+                utterance = new SpeechSynthesisUtterance(fromText.value);
+                utterance.lang = selectTag[0].value;
+            } else {
+                utterance = new SpeechSynthesisUtterance(toText.value);
+                utterance.lang = selectTag[1].value;
+            }
+            speechSynthesis.speak(utterance);
+        }
+    });
+});
+    </script>
+
+</body>
+</html>

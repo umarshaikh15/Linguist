@@ -1,0 +1,152 @@
+/* Import Google Font - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #5372F0;
+    background-image: url(images/22379977_6559978.jpg);
+    background-size: 100% 110%;
+}
+header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    font-size: 30px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+}
+header i.fa{
+    margin-right: 10px;
+}
+.container{
+    width: 60%;
+    height: 530px;
+    background: #fff;
+    border-radius: 7px;
+    padding: 20px;
+}
+.wrapper{
+    border-radius: 5px;
+    border: 1px solid #bbb; 
+}
+.wrapper .text-input{
+    display: flex;
+    border-bottom: 1px solid #bbb;
+}
+.text-input .ocr input[type="file"]{
+    margin-top: 5px;
+    margin-left: 10px;
+    height: fit-content;
+}
+.text-input div:nth-child(1) {
+    flex: 1;
+    margin-right: 10px;
+}
+.text-input div:nth-child(1) img {
+    width: 250px;
+    height: 300px;
+    margin-left: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.text-input div:nth-child(2) textarea {
+    width: 300px;
+    height: 500px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.text-input .ocr .progress {
+    flex: 1;
+    width: fit-content;
+    height: fit-content;
+    color: #fff;
+    font-size: 10px;
+    margin: 5px;
+    padding: 5px;
+    background-color: gray;
+    border-radius: 5px;
+}
+.text-input .to-text{
+    border-radius: 0px;
+    border-left: 1px solid #bbb;
+}
+.text-input textarea{
+    height: 370px;
+    width: 100%;
+    border: none;
+    outline: none;
+    resize: none;
+    font-size: 16px;
+    border-radius: 5px;
+    background: none;
+    padding: 10px 15px;
+}
+.controls, li, .icons, .icons i{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.controls{
+    list-style: none;
+    padding: 12px 15px ;
+}
+.controls .row.from .icons{
+    padding-right: 15px;
+    border-right: 1px solid #bbb;
+}
+.controls .row.to .icons{
+    padding-left: 15px;
+    border-left: 1px solid #bbb;
+}
+.controls .icons{
+    width: 68%;
+}
+.controls .icons i{
+    width: 50px;
+    color: #9f9f9f;
+    font-size: 14px;
+    cursor: pointer;
+    justify-content: center;
+}
+.controls .row select{
+    border: none;
+    outline: none;
+    font-size: 18px;
+    background: none;
+}
+.controls .exchange{
+    color: #9f9f9f;
+    font-size: 16px;
+    cursor: pointer;
+}
+.container button{
+    width: 49.5%;
+    padding: 14px;
+    margin-top: 20px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: #fff;
+    font-size: 17px;
+    border-radius: 5px;
+    background: #20B2AA;;
+}
+.container button:hover {
+    background-color: gray; /* Change the background color on hover */
+    color: white; /* Change the text color on hover */
+  }
